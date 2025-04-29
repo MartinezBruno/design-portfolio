@@ -1,8 +1,51 @@
 @import "tailwindcss";
 
+@theme {
+  --font-garamond: "EB Garamond Variable", serif;
+  --font-mulish: "Mulish Variable", sans-serif;
+
+  --color-primary: #0f70b7;
+  --color-secondary: #2daae2;
+  --color-text: #000000;
+  --color-background: #ffffff;
+}
+
 html,
 body {
   margin: 0;
   width: 100%;
   height: 100%;
+}
+
+.c-container {
+  @apply max-w-[90rem] px-[1.125rem] md:px-[2.4rem] lg:px-[4.375rem] mx-auto;
+}
+
+h1,
+.h1 {
+  @apply font-garamond font-bold text-5xl;
+}
+
+h2,
+.h2 {
+  @apply font-garamond font-bold text-[2.2779rem];
+}
+
+.card {
+  @apply font-garamond font-normal text-3xl;
+}
+
+h4,
+.h4,
+.nav-item {
+  @apply font-garamond font-bold text-2xl;
+}
+
+.body,
+p {
+  @apply font-mulish font-normal text-2xl;
+}
+
+.testimonial {
+  @apply font-mulish font-normal text-[1.284rem];
 }

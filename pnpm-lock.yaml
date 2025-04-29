@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@fontsource-variable/eb-garamond':
+        specifier: ^5.2.5
+        version: 5.2.5
+      '@fontsource-variable/mulish':
+        specifier: ^5.2.5
+        version: 5.2.5
       '@tailwindcss/vite':
         specifier: ^4.1.4
         version: 4.1.4(vite@6.3.3(jiti@2.4.2)(lightningcss@1.29.2))
@@ -209,6 +215,12 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource-variable/eb-garamond@5.2.5':
+    resolution: {integrity: sha512-vB5II+OZYCc1cetgSPXpOw38KW9nAwnV/YqLWYO/25OeTqVblIDnQM9OPEIcKbaXGGdkfFsrI2gs+KllTsFhfg==}
+
+  '@fontsource-variable/mulish@5.2.5':
+    resolution: {integrity: sha512-EgTJOY/KgTiYPVZpqds0HCa8cCO7lv775j3I4T6HYRnnKjBnc8SjOc6bFcZfT96doRhD6QKJiy8UGcRatjJROg==}
 
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
@@ -1759,6 +1771,10 @@ snapshots:
 
   '@esbuild/win32-x64@0.25.3':
     optional: true
+
+  '@fontsource-variable/eb-garamond@5.2.5': {}
+
+  '@fontsource-variable/mulish@5.2.5': {}
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:
