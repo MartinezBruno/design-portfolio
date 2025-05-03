@@ -21,12 +21,12 @@ body {
   @apply max-w-[90rem] px-[1.125rem] md:px-[2.4rem] lg:px-[4.375rem] mx-auto;
 }
 
-h1,
+h1:not([class*="text-"]),
 .h1 {
-  @apply font-garamond font-bold text-5xl;
+  @apply font-garamond font-bold text-2xl md:text-[64px];
 }
 
-h2,
+h2:not([class*="text-"]),
 .h2 {
   @apply font-garamond font-bold text-[2.2779rem];
 }
@@ -35,17 +35,33 @@ h2,
   @apply font-garamond font-normal text-3xl;
 }
 
-h4,
+h4:not([class*="text-"]),
 .h4,
 .nav-item {
-  @apply font-garamond font-bold text-2xl;
+  @apply font-garamond font-bold text-2xl transition-all;
+}
+.nav-item:not(.button):hover {
+  @apply text-primary/70;
+}
+.nav-item.btn.active {
+  @apply bg-primary;
+}
+.nav-item:not(.button).active {
+  @apply text-primary;
 }
 
 .body,
-p {
+p:not([class*="text-"]) {
   @apply font-mulish font-normal text-2xl;
 }
 
 .testimonial {
   @apply font-mulish font-normal text-[1.284rem];
+}
+
+.btn {
+  @apply font-bold text-black text-[13px] md:text-2xl py-3 px-5 border border-black font-garamond;
+}
+.btn:hover {
+  @apply bg-primary/60 !text-white border-primary/60;
 }

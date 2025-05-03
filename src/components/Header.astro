@@ -2,13 +2,13 @@
 import logo from "../assets/logo.svg";
 ---
 
-<nav class="c-container flex w-full items-center justify-between p-5 fixed">
+<nav class="c-container flex w-full items-center justify-between p-5">
   <img src={logo.src} alt="Logo" class="max-sm:max-h-[25px]" />
   <div class="hidden sm:flex">
-    <ul class="flex gap-9">
+    <ul class="flex gap-9 items-center">
       <li class="nav-item"><a href="#services">Servicios</a></li>
       <li class="nav-item"><a href="#contact">Contactame</a></li>
-      <li class="nav-item"><a href="#portfolio">Portfolio</a></li>
+      <li class="nav-item btn !text-2xl"><a href="#portfolio">Portfolio</a></li>
     </ul>
   </div>
   <div class="sm:hidden relative">
@@ -29,7 +29,7 @@ import logo from "../assets/logo.svg";
       </svg>
     </button>
     <div
-      class="drawer absolute -top-5 -right-[18px] shadow-lg translate-x-[150%] transition-transform duration-300 w-48 h-dvh bg-white p-6 flex flex-col justify-between"
+      class="drawer absolute -top-5 -right-[18px] shadow-lg translate-x-[150%] transition-transform duration-300 w-56 h-dvh bg-white p-6 flex flex-col justify-between"
     >
       <div>
         <div class="flex items-center justify-end mb-7">
@@ -51,9 +51,15 @@ import logo from "../assets/logo.svg";
         </div>
 
         <ul class="flex flex-col gap-9 text-center">
-          <li class="nav-item"><a href="#services">Servicios</a></li>
-          <li class="nav-item"><a href="#contact">Contactame</a></li>
-          <li class="nav-item"><a href="#portfolio">Portfolio</a></li>
+          <li class="nav-item">
+            <a href="#services">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact">Contactame</a>
+          </li>
+          <li class="nav-item btn !text-2xl">
+            <a href="#portfolio">Portfolio</a>
+          </li>
         </ul>
       </div>
 
