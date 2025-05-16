@@ -2,7 +2,7 @@
 import logo from "../assets/logo.svg";
 ---
 
-<nav class="c-container flex w-full items-center justify-between p-5">
+<nav class="c-container flex w-full items-center justify-between p-5 relative">
   <img src={logo.src} alt="Logo" class="max-sm:max-h-[25px]" />
   <div class="hidden sm:flex">
     <ul class="flex gap-9 items-center">
@@ -11,7 +11,7 @@ import logo from "../assets/logo.svg";
       <li class="nav-item btn !text-2xl"><a href="#portfolio">Portfolio</a></li>
     </ul>
   </div>
-  <div class="sm:hidden relative">
+  <div class="sm:hidden">
     <button type="button" class="drawerToggle cursor-pointer">
       <svg
         width="17"
@@ -29,7 +29,7 @@ import logo from "../assets/logo.svg";
       </svg>
     </button>
     <div
-      class="drawer absolute -top-5 -right-[18px] shadow-lg translate-x-[150%] transition-transform duration-300 w-56 h-dvh bg-white p-6 flex flex-col justify-between"
+      class="drawer fixed top-0 right-0 shadow-lg translate-x-[150%] transition-transform duration-300 w-56 h-dvh bg-white p-6 flex flex-col justify-between"
     >
       <div>
         <div class="flex items-center justify-end mb-7">
