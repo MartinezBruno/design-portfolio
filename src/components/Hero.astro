@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import hero_image from "../assets/hero_image.webp";
 ---
 
@@ -22,8 +23,9 @@ import hero_image from "../assets/hero_image.webp";
   </div>
 
   <div class="w-fit">
-    <img
-      src={hero_image.src}
+    <Image
+      src={hero_image}
+      loading='eager'
       alt="Martina Fernandez Picture"
       class="max-w-52 sm:max-w-[350px]"
     />
