@@ -1,8 +1,17 @@
 ---
 import Hero from "../components/Hero.astro";
+import Marquee from "../components/Marquee.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
   <Hero />
+  <Marquee
+    items={[
+      "Social media manager",
+      "Graphic designer",
+      "Web designer",
+      "Branding",
+    ]}
+  />
 </Layout>

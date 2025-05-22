@@ -1,0 +1,154 @@
+---
+interface Props {
+  items: string[];
+}
+
+const { items }: Props = Astro.props;
+---
+
+<style>
+  .marquee {
+    background-color: #0f70b7;
+  }
+  .marquee span {
+    font-weight: 700;
+    font-size: 32px;
+    color: #f6f6f6;
+  }
+
+  .marquee .icon {
+    display: flex;
+    align-items: center;
+  }
+
+  .marquee-text {
+    overflow: clip;
+    position: relative;
+  }
+
+  .marquee-text-track {
+    display: flex;
+    padding-left: 3rem;
+    gap: 3rem;
+    width: max-content;
+    animation: marquee-move-text 25s linear infinite forwards;
+    will-change: transform;
+  }
+
+  @media (width >= 768px) {
+    .marquee:hover .marquee-text-track {
+      animation-play-state: paused;
+    }
+  }
+
+  @keyframes marquee-move-text {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee span {
+      animation: none;
+      text-shadow: none;
+      width: auto;
+      display: block;
+      line-height: 1.5;
+      text-align: center;
+      white-space: normal;
+    }
+  }
+</style>
+
+<div class="marquee-container my-16">
+  <div class="marquee-text marquee rotate-left fadeout-horizontal py-1.5">
+    <div class="marquee-text-track">
+      {
+        items.map((item) => (
+          <span class="inline whitespace-nowrap items-center">{item}</span>
+        ))
+      }
+      {
+        items.map((item) => (
+          <span class="inline whitespace-nowrap items-center">{item}</span>
+        ))
+      }
+      {
+        items.map((item) => (
+          <span class="inline whitespace-nowrap items-center">{item}</span>
+        ))
+      }
+      {
+        items.map((item) => (
+          <span class="inline whitespace-nowrap items-center">{item}</span>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", function () {
+    const isMobile = window.innerWidth <= 768;
+    if (!isMobile) return;
+
+    const marqueeTrack = document.querySelector(".marquee-text-track");
+    if (!marqueeTrack) return;
+
+    let timeout;
+    let startX = 0;
+    let isDragging = false;
+
+    const getComputedTranslateX = (el) => {
+      const style = window.getComputedStyle(el);
+      const matrix = new WebKitCSSMatrix(style.transform);
+      return matrix.m41;
+    };
+
+    const pauseAnimation = () => {
+      const computedX = getComputedTranslateX(marqueeTrack);
+      marqueeTrack.style.animation = "none";
+      marqueeTrack.style.transition = "none";
+      marqueeTrack.style.transform = `translateX(${computedX}px)`;
+    };
+
+    const resetWithSmoothTransition = () => {
+      const current = getComputedTranslateX(marqueeTrack);
+      marqueeTrack.style.transition = "transform 0.8s ease-out";
+      marqueeTrack.style.transform = "translateX(0px)";
+
+      marqueeTrack.addEventListener("transitionend", function resumeAnim() {
+        marqueeTrack.removeEventListener("transitionend", resumeAnim);
+        marqueeTrack.style.transition = "none";
+        marqueeTrack.style.animation = "marquee-move-text 30s linear infinite";
+      });
+    };
+
+    marqueeTrack.addEventListener("touchstart", (e) => {
+      if (timeout) clearTimeout(timeout);
+      isDragging = true;
+      startX = e.touches[0].clientX;
+      pauseAnimation();
+    });
+
+    marqueeTrack.addEventListener("touchmove", (e) => {
+      if (!isDragging) return;
+      const x = e.touches[0].clientX;
+      const delta = x - startX;
+      const current = getComputedTranslateX(marqueeTrack);
+      marqueeTrack.style.transform = `translateX(${current + delta}px)`;
+      startX = x;
+    });
+
+    marqueeTrack.addEventListener("touchend", () => {
+      isDragging = false;
+      alert;
+      timeout = setTimeout(() => {
+        resetWithSmoothTransition();
+      }, 3000);
+    });
+  });
+</script>
