@@ -125,8 +125,9 @@ import logo from "../assets/logo.svg";
     });
 
     document.addEventListener("click", (event) => {
+      console.log({ drawer, drawerToggle, drawerClass: drawer.classList });
       const isClickInsideDrawer = drawer.contains(event.target);
-      const isClickOnToggleButton = drawerToggle.contains(event.target);
+      const isClickOnToggleButton = Array.from(drawerToggle).some(toggle => toggle.contains(event.target));
 
       if (!isClickInsideDrawer && !isClickOnToggleButton) {
         if (!drawer.classList.contains("translate-x-[150%]")) {
