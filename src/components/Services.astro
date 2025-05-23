@@ -1,0 +1,62 @@
+---
+const services = [
+  {
+    title: "Diseño Gráfico",
+    points: [
+      "Diseño de merchandasing y/o packaging",
+      "Marcas de agua",
+      "Minuaturas o portadas",
+      "Piezas multimedia",
+    ],
+  },
+  {
+    title: "Diseño Web",
+    points: [
+      "Wireframe y assets",
+      "Diseño responsive",
+      "Prototipado",
+      "Comentarios y sugerencias",
+      "Diseño UX/UI dentro de la web",
+    ],
+  },
+  {
+    title: "Branding",
+    points: [
+      "Identidad visual",
+      "Logos",
+      "Tipografía",
+      "Paleta de colores",
+      "Mockups",
+      "Diseño web y/o diseño grafico en general",
+    ],
+  },
+  {
+    title: "Social Media",
+    points: [
+      "Administracion de redes sociales en gral.",
+      "Diseño de 'historias', 'reels' y 'posts'",
+      "Diseño de feed",
+    ],
+  },
+];
+---
+
+<section class="c-container">
+  <h2 class="text-center text-[64px] font-bold font-garamond">Servicios</h2>
+  <div class="grid gap-32 grid-cols-[repeat(auto-fill,minmax(0,400px))] place-items-center place-content-center mt-4">
+    {
+      services.map((service) => (
+        <div class="bg-white p-8 rounded-lg border border-black shadow-2xl size-full flex flex-col items-center pb-20">
+          <div class="flex flex-col gap-2">
+            <h3 class="card">{service.title}</h3>
+          </div>
+          <ul class="list-['-_'] list-inside">
+            {service.points.map((point) => (
+              <li class="body">{point}</li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+</section>
