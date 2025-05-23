@@ -34,7 +34,7 @@ h2:not([class*="text-"]),
 }
 
 .card {
-  @apply font-garamond text-4xl font-bold;
+  @apply font-garamond text-2xl md:text-4xl font-bold;
 }
 
 h4:not([class*="text-"]),
@@ -54,7 +54,7 @@ h4:not([class*="text-"]),
 
 .body,
 p:not([class*="text-"]) {
-  @apply font-mulish font-normal text-2xl;
+  @apply font-mulish font-normal text-lg md:text-2xl;
 }
 
 .testimonial {
