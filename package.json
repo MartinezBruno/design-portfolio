@@ -14,6 +14,7 @@
     "@fontsource-variable/mulish": "^5.2.5",
     "@tailwindcss/vite": "^4.1.4",
     "astro": "^5.7.5",
+    "sharp": "^0.34.2",
     "tailwindcss": "^4.1.4"
   }
 }
